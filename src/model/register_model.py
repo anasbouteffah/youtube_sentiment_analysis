@@ -4,10 +4,10 @@ import json
 import mlflow
 import logging
 import os
+import dagshub
 
 # Set up MLflow tracking URI
-mlflow.set_tracking_uri("http://ec2-52-91-160-21.compute-1.amazonaws.com:5000/")
-
+dagshub.init(repo_owner='anasbouteffah', repo_name='youtube_sentiment_analysis', mlflow=True)
 
 # logging configuration
 logger = logging.getLogger('model_registration')

@@ -127,8 +127,8 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 
 
 def main():
-    mlflow.set_tracking_uri("http://ec2-52-91-160-21.compute-1.amazonaws.com:5000/")
-
+    import dagshub
+    dagshub.init(repo_owner='anasbouteffah', repo_name='youtube_sentiment_analysis', mlflow=True)
     mlflow.set_experiment('dvc-pipeline-runs')
     
     with mlflow.start_run() as run:
